@@ -12,6 +12,9 @@
     "test": "vitest"
   },
   "dependencies": {
+    "@emotion/css": "^11.13.5",
+    "@emotion/react": "^11.14.0",
+    "@emotion/styled": "^11.14.1",
     "@radix-ui/themes": "^3.2.1",
     "@tanstack/react-router": "^1.130.10",
     "@tanstack/react-router-devtools": "^1.130.10",
