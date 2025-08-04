@@ -1,9 +1,18 @@
 # Project RoadMap
 
-## Feature
+## Repo Set-up
 
 ### Tasks
 
-- [ ] Task 1
-- [ ] Task 2
-- [ ] Task 3
+- [x] Init Vite project with React, TypeScript, & SWC
+- [x] Add router (Tanstack)
+- [x] Add linting and formatting (ESLint and Prettier)
+- [x] Add unit testing framework (Vitest)
+- [x] Add commit rules (husky and commitlint)
+- [x] Add component and CSS library (Radix, Emotion)
+
+## CI/CD Pipeline Set-up
+
+### Tasks
+
+##
