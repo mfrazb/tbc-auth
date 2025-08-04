@@ -14,12 +14,18 @@ export default tseslint.config([
       js.configs.recommended,
       tseslint.configs.recommended,
       pluginReact.configs.flat.recommended,
+      pluginReact.configs.flat['jsx-runtime'],
       reactHooks.configs['recommended-latest'],
       reactRefresh.configs.vite,
     ],
     languageOptions: {
       ecmaVersion: 2020,
       globals: globals.browser,
+    },
+    settings: {
+      react: {
+        version: 'detect',
+      },
     },
     rules: {
       'no-unused-vars': 'off', // Turn off base rule as it can report incorrect errors
