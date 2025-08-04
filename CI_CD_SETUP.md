@@ -5,10 +5,7 @@ This project includes a comprehensive CI/CD pipeline using GitHub Actions. The p
 ## Workflows Overview
 
 ### 1. Main CI/CD Pipeline (`.github/workflows/ci.yml`)
-<<<<<<< HEAD
 
-=======
->>>>>>> b08f2c3 (feat: add CI/CD pipeline setup)
 - **Triggers**: Push to `main`/`develop` branches and pull requests
 - **Jobs**:
   - **Test**: Runs TypeScript checks, ESLint, and tests with coverage
@@ -17,38 +14,26 @@ This project includes a comprehensive CI/CD pipeline using GitHub Actions. The p
   - **Deploy Production**: Deploys to production on main branch (Vercel)
 
 ### 2. GitHub Pages Deployment (`.github/workflows/deploy.yml`)
-<<<<<<< HEAD
 
-=======
->>>>>>> b08f2c3 (feat: add CI/CD pipeline setup)
 - **Triggers**: Push to `main` branch
 - **Purpose**: Deploys to GitHub Pages (free hosting)
 
 ### 3. Security Scanning (`.github/workflows/security.yml`)
-<<<<<<< HEAD
 
-=======
->>>>>>> b08f2c3 (feat: add CI/CD pipeline setup)
 - **Triggers**: Push/PR to main/develop + weekly schedule
 - **Purpose**: Scans for vulnerabilities in dependencies and code
 
 ## Setup Instructions
 
 ### 1. Enable GitHub Actions
-<<<<<<< HEAD
 
-=======
->>>>>>> b08f2c3 (feat: add CI/CD pipeline setup)
 1. Go to your GitHub repository
 2. Navigate to Settings → Actions → General
 3. Ensure "Allow all actions and reusable workflows" is selected
 4. Save the changes
 
 ### 2. Set up GitHub Pages (Optional)
-<<<<<<< HEAD
 
-=======
->>>>>>> b08f2c3 (feat: add CI/CD pipeline setup)
 If you want to use GitHub Pages for hosting:
 
 1. Go to Settings → Pages
@@ -56,10 +41,7 @@ If you want to use GitHub Pages for hosting:
 3. The deployment will happen automatically when you push to main
 
 ### 3. Set up Vercel Deployment (Optional)
-<<<<<<< HEAD
 
-=======
->>>>>>> b08f2c3 (feat: add CI/CD pipeline setup)
 If you want to use Vercel for hosting:
 
 1. Create a Vercel account and connect your GitHub repository
@@ -70,10 +52,7 @@ If you want to use Vercel for hosting:
    - `VERCEL_PROJECT_ID`: Your Vercel project ID
 
 ### 4. Set up Code Coverage (Optional)
-<<<<<<< HEAD
 
-=======
->>>>>>> b08f2c3 (feat: add CI/CD pipeline setup)
 For code coverage reporting:
 
 1. Sign up for [Codecov](https://codecov.io)
@@ -81,12 +60,8 @@ For code coverage reporting:
 3. Add the `CODECOV_TOKEN` secret to your GitHub repository
 
 ### 5. Set up Security Scanning (Optional)
-<<<<<<< HEAD
 
 Set up Dependabot and CodeQL on GitHub, or for more enhanced security scanning:
-=======
-For enhanced security scanning:
->>>>>>> b08f2c3 (feat: add CI/CD pipeline setup)
 
 1. Sign up for [Snyk](https://snyk.io)
 2. Get your Snyk token
@@ -95,39 +70,27 @@ For enhanced security scanning:
 ## Workflow Features
 
 ### Automatic Testing
-<<<<<<< HEAD
 
-=======
->>>>>>> b08f2c3 (feat: add CI/CD pipeline setup)
 - TypeScript type checking
 - ESLint code quality checks
 - Unit tests with Vitest
 - Code coverage reporting
 
 ### Quality Gates
-<<<<<<< HEAD
 
-=======
->>>>>>> b08f2c3 (feat: add CI/CD pipeline setup)
 - All tests must pass
 - No linting errors
 - TypeScript compilation must succeed
 - Security vulnerabilities must be below threshold
 
 ### Deployment Strategy
-<<<<<<< HEAD
 
-=======
->>>>>>> b08f2c3 (feat: add CI/CD pipeline setup)
 - **Pull Requests**: Preview deployment for testing
 - **Main Branch**: Production deployment
 - **Artifacts**: Build files are stored for 30 days
 
 ### Security Features
-<<<<<<< HEAD
 
-=======
->>>>>>> b08f2c3 (feat: add CI/CD pipeline setup)
 - Weekly vulnerability scans
 - Dependency vulnerability checks
 - CodeQL static analysis
@@ -136,10 +99,7 @@ For enhanced security scanning:
 ## Customization
 
 ### Adding New Test Scripts
-<<<<<<< HEAD
 
-=======
->>>>>>> b08f2c3 (feat: add CI/CD pipeline setup)
 Update your `package.json` scripts and the CI workflow:
 
 ```json
@@ -152,17 +112,11 @@ Update your `package.json` scripts and the CI workflow:
 ```
 
 ### Changing Deployment Platform
-<<<<<<< HEAD
 
 Replace the Vercel deployment steps with your preferred platform:
 
 #### Netlify Example:
 
-=======
-Replace the Vercel deployment steps with your preferred platform:
-
-#### Netlify Example:
->>>>>>> b08f2c3 (feat: add CI/CD pipeline setup)
 ```yaml
 - name: Deploy to Netlify
   uses: nwtgck/actions-netlify@v2.0
@@ -170,21 +124,14 @@ Replace the Vercel deployment steps with your preferred platform:
     publish-dir: './dist'
     production-branch: main
     github-token: ${{ secrets.GITHUB_TOKEN }}
-<<<<<<< HEAD
     deploy-message: 'Deploy from GitHub Actions'
-=======
-    deploy-message: "Deploy from GitHub Actions"
->>>>>>> b08f2c3 (feat: add CI/CD pipeline setup)
   env:
     NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
     NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
 ```
 
 #### AWS S3 Example:
-<<<<<<< HEAD
 
-=======
->>>>>>> b08f2c3 (feat: add CI/CD pipeline setup)
 ```yaml
 - name: Deploy to S3
   uses: aws-actions/configure-aws-credentials@v4
@@ -198,10 +145,7 @@ Replace the Vercel deployment steps with your preferred platform:
 ```
 
 ### Environment-Specific Configurations
-<<<<<<< HEAD
 
-=======
->>>>>>> b08f2c3 (feat: add CI/CD pipeline setup)
 Add environment variables for different deployment stages:
 
 ```yaml
@@ -215,10 +159,7 @@ Add environment variables for different deployment stages:
 ## Monitoring and Troubleshooting
 
 ### Viewing Workflow Runs
-<<<<<<< HEAD
 
-=======
->>>>>>> b08f2c3 (feat: add CI/CD pipeline setup)
 1. Go to your GitHub repository
 2. Click on the "Actions" tab
 3. Select the workflow you want to view
@@ -227,28 +168,19 @@ Add environment variables for different deployment stages:
 ### Common Issues
 
 #### Build Failures
-<<<<<<< HEAD
 
-=======
->>>>>>> b08f2c3 (feat: add CI/CD pipeline setup)
 - Check TypeScript errors: `npm run build`
 - Check linting errors: `npm run lint`
 - Check test failures: `npm test`
 
 #### Deployment Failures
-<<<<<<< HEAD
 
-=======
->>>>>>> b08f2c3 (feat: add CI/CD pipeline setup)
 - Verify secrets are correctly set
 - Check deployment platform configuration
 - Review build artifacts
 
 #### Performance Issues
-<<<<<<< HEAD
 
-=======
->>>>>>> b08f2c3 (feat: add CI/CD pipeline setup)
 - Enable dependency caching (already configured)
 - Consider using matrix builds for parallel testing
 - Optimize build steps
@@ -269,8 +201,4 @@ Add environment variables for different deployment stages:
 4. Configure deployment secrets if using external hosting
 5. Customize the workflows based on your specific needs
 
-<<<<<<< HEAD
 For more information, see the [GitHub Actions documentation](https://docs.github.com/en/actions).
-=======
-For more information, see the [GitHub Actions documentation](https://docs.github.com/en/actions). 
->>>>>>> b08f2c3 (feat: add CI/CD pipeline setup)

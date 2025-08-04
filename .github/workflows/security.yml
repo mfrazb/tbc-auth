@@ -2,15 +2,9 @@ name: Security Scan
 
 on:
   push:
-<<<<<<< HEAD
     branches: [main]
   pull_request:
     branches: [main]
-=======
-    branches: [ main, develop ]
-  pull_request:
-    branches: [ main, develop ]
->>>>>>> b08f2c3 (feat: add CI/CD pipeline setup)
   schedule:
     # Run weekly on Sundays at 2 AM UTC
     - cron: '0 2 * * 0'
@@ -19,25 +13,16 @@ jobs:
   security:
     name: Security Scan
     runs-on: ubuntu-latest
-<<<<<<< HEAD
 
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
 
-=======
-    
-    steps:
-      - name: Checkout code
-        uses: actions/checkout@v4
-        
->>>>>>> b08f2c3 (feat: add CI/CD pipeline setup)
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
           node-version: '20'
           cache: 'npm'
-<<<<<<< HEAD
 
       - name: Install dependencies
         run: npm ci
@@ -45,36 +30,17 @@ jobs:
       - name: Run npm audit
         run: npm audit --audit-level=moderate
 
-=======
-          
-      - name: Install dependencies
-        run: npm ci
-        
-      - name: Run npm audit
-        run: npm audit --audit-level=moderate
-        
->>>>>>> b08f2c3 (feat: add CI/CD pipeline setup)
       - name: Run Snyk to check for vulnerabilities
         uses: snyk/actions/node@master
         env:
           SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
         with:
           args: --severity-threshold=high
-<<<<<<< HEAD
 
-=======
-          
->>>>>>> b08f2c3 (feat: add CI/CD pipeline setup)
       - name: Run CodeQL Analysis
         uses: github/codeql-action/init@v3
         with:
           languages: javascript
-<<<<<<< HEAD
 
       - name: Perform CodeQL Analysis
         uses: github/codeql-action/analyze@v3
-=======
-          
-      - name: Perform CodeQL Analysis
-        uses: github/codeql-action/analyze@v3 
->>>>>>> b08f2c3 (feat: add CI/CD pipeline setup)
