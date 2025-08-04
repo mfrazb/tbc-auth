@@ -11,6 +11,12 @@ on:
   pull_request:
     branches: [main]
 
+# Explicitly set permissions for security
+permissions:
+  contents: read
+  actions: read
+  security-events: write
+
 jobs:
   test:
     name: Test and Lint
