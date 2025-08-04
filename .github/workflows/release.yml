@@ -10,6 +10,8 @@ on:
 jobs:
   validate-release:
     name: Validate Release
+    permissions:
+      contents: read
     runs-on: ubuntu-latest
 
     steps:
