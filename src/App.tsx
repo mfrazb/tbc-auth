@@ -29,7 +29,8 @@ function App() {
       <p className="read-the-docs">
         Click on the Vite and React logos to learn more
       </p>
-      <Button content="Click me" />
+      <Button variant="tbc-mustard">Click me</Button>
+      <Button variant="tbc-green">Click me</Button>
     </MaxAppWidth>
   )
 }
