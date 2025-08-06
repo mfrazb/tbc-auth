@@ -24,4 +24,8 @@
 - [x] Update Vite config to add manual chunk splitting and source map generation for debugging
 - [x] Implement security best practices with workflow permissions, security scanning, npm audit, branch protection, and secret management
 
-##
+## UI & Styles
+
+- [x] Set up global styles for component library
+- [x] Create a few template components (input, button, card)
+- [x] Add Storybook to repo
