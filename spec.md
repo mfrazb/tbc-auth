@@ -26,6 +26,6 @@
 
 ## UI Set-up
 
-- [x] Create a few template components (input, button, card)
+- [x] Create a few template components (Button, MaxAppWidth)
 - [x] Set up style guide and linting for component library (Radix, Emotion, Stylelint)
-- [x] Add component documentation (Storybook)
+- [ ] Add component documentation (Storybook)
