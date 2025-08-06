@@ -1,16 +1,28 @@
 import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
+import '@radix-ui/themes/styles.css'
 import './index.css'
 import App from './App.tsx'
-import '@radix-ui/themes/styles.css'
-
-import { ThemeProvider } from '@emotion/react'
+import { Theme } from '@radix-ui/themes'
+import { ThemeProvider as EmotionThemeProvider } from '@emotion/react'
 import { theme } from './utils'
+import styled from '@emotion/styled'
+
+const RadixTheme = styled(Theme)`
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  align-self: center;
+  width: 100%;
+  border: solid blue 2px;
+`
 
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
-    <ThemeProvider theme={theme}>
-      <App />
-    </ThemeProvider>
+    <RadixTheme>
+      <EmotionThemeProvider theme={theme}>
+        <App />
+      </EmotionThemeProvider>
+    </RadixTheme>
   </StrictMode>,
 )
