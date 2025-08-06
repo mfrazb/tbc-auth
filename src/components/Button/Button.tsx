@@ -61,7 +61,7 @@ const StyledCustomButton = styled(RadixButton)<{ $customVariant: string }>`
             border-color: ${theme.colors['tbc-happy-greens-dark']};
           }
           
-          &:focus { 
+          &:focus {
             box-shadow: 0 0 0 2px ${theme.colors['tbc-brown']};
           }
         `
