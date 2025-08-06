@@ -7,8 +7,10 @@ export const theme = {
     'tbc-mustard': '#c78c26',
     'tbc-beet-red': '#b55548',
     'tbc-happy-greens': '#66843b',
+    'tbc-happy-greens-dark': '#55702f',
     'tbc-gold': '#f59e0b',
     'tbc-tomato-red': '#ed4c22',
+    white: '#ffffff',
   },
   fontSize: {
     'font-size-xxs': '8px',

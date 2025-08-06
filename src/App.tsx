@@ -3,6 +3,7 @@ import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
 import { Button, MaxAppWidth } from './components'
+import { TextField } from '@radix-ui/themes'
 
 function App() {
   const [count, setCount] = useState(0)
@@ -29,7 +30,10 @@ function App() {
       <p className="read-the-docs">
         Click on the Vite and React logos to learn more
       </p>
-      <Button content="Click me" />
+      <TextField.Root variant="surface" placeholder="Username" />
+      <TextField.Root variant="surface" placeholder="Password" />
+      <Button variant="tbc-mustard">Sign in</Button>
+      <Button variant="tbc-green">Sign up</Button>
     </MaxAppWidth>
   )
 }
