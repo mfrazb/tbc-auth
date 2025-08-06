@@ -3,22 +3,14 @@ import { createRoot } from 'react-dom/client'
 import './index.css'
 import App from './App.tsx'
 import '@radix-ui/themes/styles.css'
-import { Theme } from '@radix-ui/themes'
-import styled from '@emotion/styled'
 
-const StyledTheme = styled(Theme)`
-  display: flex;
-  flex-direction: column;
-  align-items: stretch;
-  align-self: center;
-  width: 100%;
-  border: solid blue 2px;
-`
+import { ThemeProvider } from '@emotion/react'
+import { theme } from './utils'
 
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
-    <StyledTheme appearance="dark">
+    <ThemeProvider theme={theme}>
       <App />
-    </StyledTheme>
+    </ThemeProvider>
   </StrictMode>,
 )
