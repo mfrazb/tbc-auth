@@ -11,8 +11,17 @@
 - [x] Add commit rules (husky and commitlint)
 - [x] Add component and CSS library (Radix, Emotion)
 
-## CI/CD Pipeline Set-up
+## CI/CD Pipeline Set-up (GitHub Actions)
 
 ### Tasks
+
+- [x] Set up GitHub Actions workflows for CI/CD
+- [x] Create main CI pipeline (ci.yml) with testing, linting, and building for feature branches, develop, and release branches
+- [x] Set up release validation workflow (release.yml) for release branches
+- [x] Configure GitHub Pages deployment workflow (pages.yml) for production
+- [x] Add template for more robust security scanning workflow (security.yml) for vulnerability detection
+- [x] Add Vercel deployment template
+- [x] Update Vite config to add manual chunk splitting and source map generation for debugging
+- [x] Implement security best practices with workflow permissions, security scanning, npm audit, branch protection, and secret management
 
 ##
