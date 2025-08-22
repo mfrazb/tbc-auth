@@ -4,6 +4,7 @@ import tbcLogo from './assets/tbc-logo.png'
 import './App.css'
 import { Button, MaxAppWidth } from './components'
 import { Heading, Text, TextField } from '@radix-ui/themes'
+import { OrderHistory } from './pages'
 
 const supabase = createClient(
   'https://mhbstcvqtfusmeggnfzy.supabase.co',
@@ -70,6 +71,7 @@ function App() {
   }
 
   if (!session) {
+    // OPTIMIZE: return Unauthenticated UI
     return (
       <MaxAppWidth>
         <div>
@@ -137,6 +139,7 @@ function App() {
   }
 
   return (
+    // OPTIMIZE: return Authenticated UI
     <MaxAppWidth>
       <div>
         <a href="https://tbcoop.org/" target="_blank" rel="noopener noreferrer">
@@ -149,6 +152,7 @@ function App() {
 
       <Text>Welcome, {session.user.email}!</Text>
       <Text>Past orders:</Text>
+      <OrderHistory />
       <Button variant="tbc-mustard" onClick={handleSignOut}>
         Sign Out
       </Button>
