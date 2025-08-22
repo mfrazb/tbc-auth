@@ -3,7 +3,7 @@ import { createClient, type Session } from '@supabase/supabase-js'
 import tbcLogo from './assets/tbc-logo.png'
 import './App.css'
 import { Button, MaxAppWidth } from './components'
-import { Text, TextField } from '@radix-ui/themes'
+import { Heading, Text, TextField } from '@radix-ui/themes'
 
 const supabase = createClient(
   'https://mhbstcvqtfusmeggnfzy.supabase.co',
@@ -81,9 +81,9 @@ function App() {
             <img src={tbcLogo} className="logo" alt="TBC logo" />
           </a>
         </div>
-        <h1>
+        <Heading>
           Triad Buying<br></br>Co-op
-        </h1>
+        </Heading>
 
         <form
           onSubmit={handleSignIn}
@@ -148,6 +148,7 @@ function App() {
       </h1>
 
       <Text>Welcome, {session.user.email}!</Text>
+      <Text>Past orders:</Text>
       <Button variant="tbc-mustard" onClick={handleSignOut}>
         Sign Out
       </Button>
