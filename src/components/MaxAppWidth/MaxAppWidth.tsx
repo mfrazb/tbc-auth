@@ -7,7 +7,6 @@ const StyledFlex = styled(Flex)`
   align-self: center;
   width: 100%;
   max-width: 1280px;
-  border: solid green 2px;
 `
 export const MaxAppWidth = ({ children }: { children: React.ReactNode }) => {
   return <StyledFlex>{children}</StyledFlex>
