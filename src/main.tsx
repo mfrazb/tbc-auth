@@ -14,7 +14,6 @@ const RadixTheme = styled(Theme)`
   align-items: stretch;
   align-self: center;
   width: 100%;
-  border: solid blue 2px;
 `
 
 createRoot(document.getElementById('root')!).render(
