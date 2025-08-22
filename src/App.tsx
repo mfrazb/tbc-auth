@@ -1,14 +1,9 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
 import tbcLogo from './assets/tbc-logo.png'
 import './App.css'
 import { Button, MaxAppWidth } from './components'
 import { TextField } from '@radix-ui/themes'
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
     <MaxAppWidth>
       <div>
