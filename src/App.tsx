@@ -5,6 +5,7 @@ import './App.css'
 import { Button, MaxAppWidth } from './components'
 import { Heading, Text, TextField } from '@radix-ui/themes'
 import { OrderHistory } from './pages'
+import { SignIn } from './features'
 
 const supabase = createClient(
   'https://mhbstcvqtfusmeggnfzy.supabase.co',
@@ -74,66 +75,19 @@ function App() {
     // OPTIMIZE: return Unauthenticated UI
     return (
       <MaxAppWidth>
-        <div>
-          <a
-            href="https://tbcoop.org/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <img src={tbcLogo} className="logo" alt="TBC logo" />
-          </a>
-        </div>
-        <Heading>
-          Triad Buying<br></br>Co-op
-        </Heading>
-
-        <form
-          onSubmit={handleSignIn}
-          style={{
-            display: 'flex',
-            flexDirection: 'column',
-            gap: '1rem',
-            maxWidth: '300px',
-            margin: '0 auto',
-          }}
-        >
-          <TextField.Root
-            variant="surface"
-            placeholder="Email"
-            value={email}
-            onChange={e => setEmail(e.target.value)}
-            type="email"
-            required
-          />
-          <TextField.Root
-            variant="surface"
-            placeholder="Password"
-            value={password}
-            onChange={e => setPassword(e.target.value)}
-            type="password"
-            required
-          />
-
-          {error && (
-            <Text color="red" size="2">
-              {error}
-            </Text>
-          )}
-
-          <div style={{ display: 'flex', gap: '1rem' }}>
-            <Button variant="tbc-mustard" type="submit" disabled={loading}>
-              {loading ? 'Signing in...' : 'Sign in'}
-            </Button>
-            <Button
-              variant="tbc-green"
-              type="button"
-              onClick={handleSignUp}
-              disabled={loading}
-            >
-              {loading ? 'Signing up...' : 'Sign up'}
-            </Button>
-          </div>
-        </form>
+        <SignIn
+          email={email}
+          error={error}
+          setError={setError}
+          loading={loading}
+          setLoading={setLoading}
+          handleSignIn={handleSignIn}
+          handleSignUp={handleSignUp}
+          handleSignOut={handleSignOut}
+          password={password}
+          setEmail={setEmail}
+          setPassword={setPassword}
+        />
       </MaxAppWidth>
     )
   }
