@@ -27,7 +27,7 @@ export const OrderHistory = () => {
     <StyledSection>
       <Heading>Order History</Heading>
       <FilterBar />
-      <OrderTable orders={orders} />
+      <OrderTable />
       <PaginationBar />
     </StyledSection>
   )
