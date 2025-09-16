@@ -5,6 +5,6 @@ import { Card } from '@radix-ui/themes'
 //   return <Card>Order Table</Card>
 // }
 
-export const OrderTable = ({ orders }: { orders: Order[] }) => {
+export const OrderTable = () => {
   return <Card>Order Table</Card>
 }

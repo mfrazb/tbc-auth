@@ -1,6 +1,6 @@
-import { Button, Link } from '../../components'
-import { Dialog, Flex, Heading, Text, TextField } from '@radix-ui/themes'
-import Markdown from 'react-markdown'
+import { Button, Heading, Text } from '../../components'
+import { Card, Dialog, Flex, TextField } from '@radix-ui/themes'
+// import { Form } from 'radix-ui'
 import { Cross2Icon } from '@radix-ui/react-icons'
 import tbcLogo from '../../assets/tbc-logo.png'
 import signin from '../../content/signin.json'
@@ -22,10 +22,26 @@ interface SignInProps {
   setPassword: Dispatch<SetStateAction<string>>
 }
 
-const SignInContainer = styled(Flex)`
+const SignInContainer = styled(Card)`
+  display: flex;
   flex-direction: column;
+  align-items: center;
+  align-self: center;
+  justify-content: center;
   gap: ${theme.spacing['spacing-xs']};
+  padding: ${theme.spacing['spacing-xl']};
+  text-align: center;
 `
+
+const LogoContainer = styled(Flex)`
+  flex-direction: column;
+  padding: ${theme.spacing['spacing-xs']};
+
+  .logo:hover {
+    filter: drop-shadow(0 0 2em ${theme.colors['tbc-tomato-red']});
+  }
+`
+
 const DialogContainer = styled(Flex)`
   flex-direction: column;
   gap: ${theme.spacing['spacing-xs']};
@@ -48,13 +64,12 @@ export const SignIn = ({
   // handleSignOut,
   // handleSignUp,
 }: SignInProps) => {
-  console.log('signin:', signin.content.sections.hero.logo.alt)
   const hero = signin.content.sections.hero
   const membership = signin.content.sections.membership
 
   return (
     <SignInContainer>
-      <div>
+      <LogoContainer>
         <a href="https://tbcoop.org/" target="_blank" rel="noopener noreferrer">
           <img
             src={tbcLogo}
@@ -62,11 +77,8 @@ export const SignIn = ({
             alt={hero.logo.alt || 'TBC logo'}
           />
         </a>
-      </div>
-      <Heading>
-        <Markdown>{hero.heading}</Markdown>
-      </Heading>
-
+      </LogoContainer>
+      <Heading>{hero.heading}</Heading>
       <form
         onSubmit={handleSignIn}
         style={{
@@ -107,17 +119,21 @@ export const SignIn = ({
         </div>
       </form>
       <DialogContainer>
-        <Text>{membership.richText}</Text>
+        <Text style={{ margin: 0, textAlign: 'center' }}>
+          {membership.richText}
+        </Text>
         <Dialog.Root>
           <Dialog.Trigger>
-            <Button variant="ghost">Reach out to request membership</Button>
+            <Button size="3" variant="ghost">
+              Reach out to us to request membership
+            </Button>
           </Dialog.Trigger>
           <Dialog.Content className="DialogContent">
             <Dialog.Title className="DialogTitle">
               Request membership
             </Dialog.Title>
             <Dialog.Description className="DialogDescription">
-              Share your name and email, and we'll reach out.
+              {`Share your name and email, and we'll reach out.`}
             </Dialog.Description>
             <fieldset className="Fieldset">
               <label className="Label" htmlFor={membership.form.name.id}>

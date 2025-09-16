@@ -21,6 +21,16 @@
           "alt": "TBC logo"
         }
       },
+      "signin": {
+        "title": "Sign In Form",
+        "description": "Sign in form",
+        "form": {
+          "title": "Sign In",
+          "description": "Sign in form",
+          "heading": "Sign In",
+          "subheading": "Sign in to your account"
+        }
+      },
       "membership": {
         "title": "Membership",
         "description": "Membership form",
