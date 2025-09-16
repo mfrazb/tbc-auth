@@ -28,12 +28,12 @@ export const SignIn = ({
   loading,
   setEmail,
   password,
-  setError,
-  setLoading,
+  // setError,
+  // setLoading,
   setPassword,
   handleSignIn,
-  handleSignOut,
-  handleSignUp,
+  // handleSignOut,
+  // handleSignUp,
 }: SignInProps) => {
   return (
     <>
