@@ -106,5 +106,5 @@ export const Button = forwardRef<HTMLButtonElement, CustomButtonProps>(
   },
 )
 
-
+Button.displayName = 'Button'
 
