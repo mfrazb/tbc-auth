@@ -92,7 +92,7 @@ export const SignIn = ({
             </Button>
 
             <Text>
-              Don't have an account? <br /> Reach out to{' '}
+              {`Don't have an account? <br /> Reach out to`}
               <Link href="mailto:membership@tbcoop.org">
                 request membership.
               </Link>
