@@ -3,7 +3,7 @@ import { createClient, type Session } from '@supabase/supabase-js'
 import tbcLogo from './assets/tbc-logo.png'
 import './App.css'
 import { Button, MaxAppWidth } from './components'
-import { Heading, Text, TextField } from '@radix-ui/themes'
+import { Text } from '@radix-ui/themes'
 import { OrderHistory } from './pages'
 import { SignIn } from './features'
 
