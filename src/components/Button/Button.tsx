@@ -9,13 +9,18 @@ type RadixButtonProps = ComponentProps<typeof RadixButton>
 type CustomButtonProps = Omit<RadixButtonProps, 'variant'> & {
   variant?:
     | RadixButtonProps['variant']
+    | 'green-ghost'
+    | 'soft-green'
     | 'tbc-green'
     | 'tbc-mustard'
     | 'tbc-beet-red'
 }
 
+const StyledButton = styled(RadixButton)`
+  width: 100%;
+`
 
-const GreenButton = styled(RadixButton)`
+const GreenButton = styled(StyledButton)`
   background-color: ${theme.colors['tbc-happy-greens']};
   border-color: ${theme.colors['tbc-happy-greens']};
   color: ${theme.colors['white']};
@@ -30,7 +35,7 @@ const GreenButton = styled(RadixButton)`
   }
 `
 
-const MustardButton = styled(RadixButton)`
+const MustardButton = styled(StyledButton)`
   background-color: ${theme.colors['tbc-mustard']};
   border-color: ${theme.colors['tbc-mustard']};
   color: white;
@@ -45,7 +50,7 @@ const MustardButton = styled(RadixButton)`
   }
 `
 
-const BeetButton = styled(RadixButton)`
+const BeetButton = styled(StyledButton)`
   background-color: ${theme.colors['tbc-beet-red']};
   border-color: ${theme.colors['tbc-beet-red']};
   color: white;
@@ -60,16 +65,42 @@ const BeetButton = styled(RadixButton)`
   }
 `
 
+const SoftGreenButton = styled(StyledButton)`
+  background-color: ${theme.colors['tbc-happy-greens']};
+  border-color: ${theme.colors['tbc-happy-greens']};
+  color: ${theme.colors['white']};
+  opacity: 0.8;
+
+  &:hover {
+    background-color: ${theme.colors['tbc-happy-greens-dark']};
+    border-color: ${theme.colors['tbc-happy-greens-dark']};
+    opacity: 1;
+  }
+
+  &:focus {
+    box-shadow: 0 0 0 2px ${theme.colors['tbc-brown']};
+    opacity: 1;
+  }
+`
+
 // Create a custom Button component that extends Radix UI's variant system
 export const Button = forwardRef<HTMLButtonElement, CustomButtonProps>(
   ({ variant = 'solid', children, ...props }, ref) => {
     // Handle custom variants
     if (
+      variant === 'green-ghost' ||
+      variant === 'soft-green' ||
       variant === 'tbc-green' ||
       variant === 'tbc-mustard' ||
       variant === 'tbc-beet-red'
     ) {
       switch (variant) {
+        case 'soft-green':
+          return (
+            <SoftGreenButton ref={ref} variant="soft" {...props}>
+              {children}
+            </SoftGreenButton>
+          )
         case 'tbc-green':
           return (
             <GreenButton ref={ref} variant="solid" {...props}>
@@ -99,9 +130,9 @@ export const Button = forwardRef<HTMLButtonElement, CustomButtonProps>(
 
     // Pass through to Radix UI for standard variants
     return (
-      <RadixButton ref={ref} variant={variant} {...props}>
+      <StyledButton ref={ref} variant={variant} {...props}>
         {children}
-      </RadixButton>
+      </StyledButton>
     )
   },
 )

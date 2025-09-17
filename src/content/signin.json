@@ -18,17 +18,31 @@
         "heading": "Triad Buying  \nCo-op",
         "logo": {
           "src": "tbc-logo.png",
+          "target": "https://tbcoop.org/",
           "alt": "TBC logo"
         }
       },
-      "signin": {
+      "signInForm": {
         "title": "Sign In Form",
         "description": "Sign in form",
         "form": {
           "title": "Sign In",
           "description": "Sign in form",
-          "heading": "Sign In",
-          "subheading": "Sign in to your account"
+          "email": {
+            "id": "email",
+            "label": "Email",
+            "placeholder": "Email"
+          },
+          "password": {
+            "id": "password",
+            "label": "Password",
+            "placeholder": "Password"
+          },
+          "login": {
+            "id": "login",
+            "label": "Login",
+            "placeholder": "Login"
+          }
         }
       },
       "membership": {
@@ -41,11 +55,15 @@
           "description": "Contact form for requesting membership",
           "heading": "Request membership",
           "subheading": "Share your name and email, and we'll reach out.",
-          "name": {
-            "id": "name",
-            "defaultValue": "Sunny Day",
-            "label": "Name",
-            "placeholder": "Name"
+          "firstName": {
+            "id": "firstName",
+            "label": "First Name",
+            "placeholder": "First Name"
+          },
+          "lastName": {
+            "id": "lastName",
+            "label": "Last Name",
+            "placeholder": "Last Name"
           },
           "email": {
             "id": "email",
