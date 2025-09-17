@@ -1,24 +1,11 @@
 :root {
-  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
-
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: var(--color-tbc-green-light);
-
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-
   /* Colors */
   --color-tbc-brown: #413622;
   --color-tbc-brown-dark: #2e2619;
   --color-tbc-green: #b0bfa8;
   --color-tbc-green-light: #d9e3d4;
   --color-tbc-mustard: #c78c26;
-  --color-tbc-beet-red: ##b55548;
+  --color-tbc-beet-red: #b55548;
   --color-tbc-happy-greens: #66843b;
   --color-tbc-happy-greens-dark: #55702f;
   --color-tbc-gold: #f59e0b;
@@ -47,6 +34,27 @@
   --radius-sm: 8px;
   --radius-md: 12px;
   --radius-lg: 16px;
+
+  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  color-scheme: light dark;
+  color: rgba(255, 255, 255, 0.87);
+  background-color: var(--color-tbc-green-light);
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
 /* Force override Radix UI accent colors with higher specificity */
@@ -70,11 +78,12 @@
 
 a {
   font-weight: 500;
-  color: #646cff;
+  color: var(--color-tbc-beet-red);
   text-decoration: inherit;
 }
+
 a:hover {
-  color: #535bf2;
+  color: var(--color-tbc-tomato-red);
 }
 
 body {
@@ -83,11 +92,16 @@ body {
   place-items: center;
   min-width: 320px;
   min-height: 100vh;
+  background-color: var(--color-tbc-green-light);
 }
 
 h1 {
   font-size: 3.2em;
   line-height: 1.1;
+}
+
+p {
+  padding: 0;
 }
 
 button {
@@ -269,7 +283,7 @@ button:focus-visible {
       --gray-track: oklch(56.1% 0.013 81.79);
     }
   }
-}
+} 
 
 /* Dark Background */
 .dark,
@@ -281,6 +295,7 @@ button:focus-visible {
 /* Light Theme - Radix Custom Palette */
 
 /* Light Accent Scale */
+
 :root,
 .light,
 .light-theme {
@@ -353,7 +368,7 @@ button:focus-visible {
       --orange-track: oklch(33.9% 0.0357 81.93);
     }
   }
-}
+} 
 
 /* Light Gray Scale */
 :root,
@@ -431,9 +446,10 @@ button:focus-visible {
 }
 
 /* Light Background */
+
 :root,
 .light,
 .light-theme,
 .radix-themes {
-  --color-background: #d9e3d4;
+  --color-background: rgb(217, 227, 212, 0.5);
 }

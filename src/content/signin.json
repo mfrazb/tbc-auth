@@ -1,0 +1,82 @@
+{
+  "meta": {
+    "id": "signin",
+    "title": "Sign In",
+    "author": "TBC",
+    "version": "1.0.0",
+    "date": "2025-09-16",
+    "description": "Sign in to your account",
+    "tags": []
+  },
+  "content": {
+    "title": "Sign In",
+    "description": "Sign in to your account",
+    "sections": {
+      "hero": {
+        "title": "Triad Buying Co-op",
+        "description": "TBC header and logo",
+        "heading": "Triad Buying  \nCo-op",
+        "logo": {
+          "src": "tbc-logo.png",
+          "target": "https://tbcoop.org/",
+          "alt": "TBC logo"
+        }
+      },
+      "signInForm": {
+        "title": "Sign In Form",
+        "description": "Sign in form",
+        "form": {
+          "title": "Sign In",
+          "description": "Sign in form",
+          "email": {
+            "id": "email",
+            "label": "Email",
+            "placeholder": "Email"
+          },
+          "password": {
+            "id": "password",
+            "label": "Password",
+            "placeholder": "Password"
+          },
+          "login": {
+            "id": "login",
+            "label": "Login",
+            "placeholder": "Login"
+          }
+        }
+      },
+      "membership": {
+        "title": "Membership",
+        "description": "Membership form",
+        "richText": "Don't have an account?",
+        "button": "Reach out to request membership",
+        "form": {
+          "title": "Request membership",
+          "description": "Contact form for requesting membership",
+          "heading": "Request membership",
+          "subheading": "Share your name and email, and we'll reach out.",
+          "firstName": {
+            "id": "firstName",
+            "label": "First Name",
+            "placeholder": "First Name"
+          },
+          "lastName": {
+            "id": "lastName",
+            "label": "Last Name",
+            "placeholder": "Last Name"
+          },
+          "email": {
+            "id": "email",
+            "defaultValue": "sunny.day@sunnyday.com",
+            "label": "Email",
+            "placeholder": "Email"
+          },
+          "submit": "Submit"
+        }
+      }
+    },
+    "order": {
+      "sections": []
+    }
+  }
+}

@@ -1,6 +1,6 @@
 // import { useState } from 'react'
 import { Heading, Section } from '@radix-ui/themes'
-import { FilterBar, OrderTable, PaginationBar } from '../features/OrderHistory'
+import { FilterBar, PaginationBar } from '../features/OrderHistory'
 import styled from '@emotion/styled'
 import { theme } from '../utils'
 // import type { Order } from '../data'
@@ -18,8 +18,8 @@ export const OrderHistory = () => {
   // TODO: Set state
   // SET FILTERS
   // FULL ORDER HISTORY
+
   // const [orders, setOrders] = useState<Order[]>([])
-  // SET PAGINATION
 
   // make API call to get orders
 
@@ -27,7 +27,7 @@ export const OrderHistory = () => {
     <StyledSection>
       <Heading>Order History</Heading>
       <FilterBar />
-      <OrderTable />
+      {/* <OrderTable orders={orders} /> */}
       <PaginationBar />
     </StyledSection>
   )
