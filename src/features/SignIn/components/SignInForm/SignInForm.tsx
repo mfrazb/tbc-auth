@@ -1,18 +1,16 @@
+import { useState, type Dispatch, type SetStateAction } from 'react'
+import { supabase } from '../../../../services'
 import { Button, Text } from '../../../../components'
 import { Form } from 'radix-ui'
-import type { Dispatch, SetStateAction } from 'react'
+import { Flex, TextField } from '@radix-ui/themes'
 import styled from '@emotion/styled'
 import { theme } from '../../../../utils'
-import { Flex, TextField } from '@radix-ui/themes'
 
 interface SignInFormProps {
-  email: string
-  password: string
   error: string | null
   loading: boolean
-  setEmail: Dispatch<SetStateAction<string>>
-  setPassword: Dispatch<SetStateAction<string>>
-  handleSignIn: (e: React.FormEvent) => Promise<void>
+  setError: Dispatch<SetStateAction<string | null>>
+  setLoading: Dispatch<SetStateAction<boolean>>
   signInForm: {
     form: {
       email: {
@@ -48,15 +46,31 @@ const FormMessage = styled(Form.Message)`
 // MFB TODO: add "forgot password" link
 // MFB TODO: add "show password" button
 export const SignInForm = ({
-  email,
-  password,
   error,
   loading,
-  setEmail,
-  setPassword,
-  handleSignIn,
+  setError,
+  setLoading,
   signInForm,
 }: SignInFormProps) => {
+  const [email, setEmail] = useState('')
+  const [password, setPassword] = useState('')
+
+  const handleSignIn = async (e: React.FormEvent) => {
+    e.preventDefault()
+    setLoading(true)
+    setError(null)
+
+    const { error } = await supabase.auth.signInWithPassword({
+      email,
+      password,
+    })
+
+    if (error) {
+      setError(error.message)
+    }
+    setLoading(false)
+  }
+
   return (
     <FormContainer onSubmit={handleSignIn} style={{ width: '100%' }}>
       <FormInputContainer>

@@ -10,8 +10,7 @@ import './App.css'
 
 function App() {
   const [session, setSession] = useState<Session | null>(null)
-  const [email, setEmail] = useState('')
-  const [password, setPassword] = useState('')
+
   const [loading, setLoading] = useState(false)
   const [error, setError] = useState<string | null>(null)
 
@@ -38,14 +37,10 @@ function App() {
     return (
       <MaxAppWidth>
         <SignIn
-          email={email}
           error={error}
           setError={setError}
           loading={loading}
           setLoading={setLoading}
-          password={password}
-          setEmail={setEmail}
-          setPassword={setPassword}
         />
       </MaxAppWidth>
     )
